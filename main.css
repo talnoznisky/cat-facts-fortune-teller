@@ -1,0 +1,23 @@
+.container{
+    height:100%;
+    /* border: 2px solid lightgray;
+    border-radius: 5px;
+    margin-top: 1em; */
+}
+
+img{
+padding-top: 1em;
+}
+
+p, footer{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0em;
+  font-family: serif;
+  font-style: italic;
+  font-size: 2vw;
+  padding: 1em;
+}
+footer{
+  font-size: 1vw;
+}
