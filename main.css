@@ -1,5 +1,6 @@
 .container{
-    height:100%;
+    height:100vh;
+    .inline
     /* border: 2px solid lightgray;
     border-radius: 5px;
     margin-top: 1em; */
@@ -7,9 +8,10 @@
 
 img{
 padding-top: 1em;
+transform: rotateY(180deg);
 }
 
-p, footer{
+p, .page-footer{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0em;
@@ -18,6 +20,32 @@ p, footer{
   font-size: 1em;
   padding: 1em;
 }
-footer{
+
+.page-footer{
   font-size: .5em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0;
+}
+
+.refresh{
+  position:fixed;
+  bottom: 8%;
+  font-family: serif;
+  font-style: italic;
+  font-size: 2.5vh;
+  z-index: 10;
+  border: solid 1px gray;
+  border-radius: 6px;
+  background-color: darksalmon;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 520px;
+  width:85vw;
+}
+.refresh > p{
+  padding: 8px 0px 8px 0px;
+
 }

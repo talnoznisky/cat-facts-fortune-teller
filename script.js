@@ -9,8 +9,9 @@ function getRandomInt(min, max) {
 }
 
 function getRandomFact(){
-    fact = facts[getRandomInt(0,data.length)]
-}
+    var fact = facts[getRandomInt(0,data.length)]
+    document.querySelector("p").textContent =  `"${fact}"`;
+  }
 
 function sendRequest(){
   var request = new XMLHttpRequest();
@@ -23,7 +24,6 @@ function sendRequest(){
       facts.push(data[i].text)
     }
     getRandomFact();
-    buildPage();
   };
   request.send()
 }
@@ -35,27 +35,43 @@ function buildPage(){
   const container = document.createElement('div')
   container.setAttribute("class", "container col-md-6")
 
+  const refresh = document.createElement('div')
+  refresh.setAttribute('class', 'refresh text-center col align-self-center')
+  refresh.setAttribute('onclick', 'sendRequest()')
+  refresh.setAttribute('keydown', 'sendRequest()')
+
+  const refreshText = document.createElement("p")
+  refreshText.innerText = "Click here for a new fortune"
+
+  //
+  //
+  // refresh.innerText = "Click here for a new fortune"
+
   const header = document.createElement('p')
   header.textContent = "cat facts NYT fortune teller"
-
 
   const picture = document.createElement('img')
   picture.src = "fortune-teller.png"
   picture.setAttribute("class","img-fluid mx-auto d-block")
 
+
   const fortune = document.createElement("p")
-  fortune.setAttribute("class","text-center col-10")
-  fortune.textContent =  `"${fact}"`;
+  fortune.setAttribute("class","text-center")
 
   const footer = document.createElement("footer")
-  footer.setAttribute("class", "page-footer font-small pt-4 text-center col-10")
-  footer.innerHTML = 'shoutout: <a href="https://alexwohlbruck.github.io/cat-facts/docs/">cat-facts api</a> & NYT cartoonist <a href="https://www.mickstevens.com/">Mick Stevens</a>'
+  footer.setAttribute("class", "page-footer")
 
+  const footerText = document.createElement("p")
+  footerText.setAttribute("class", "text-center")
+  footerText.innerHTML = 'shoutout: <a href="https://alexwohlbruck.github.io/cat-facts/docs/">cat-facts api</a> & NYT cartoonist <a href="https://www.mickstevens.com/">Mick Stevens</a>'
 
   app.appendChild(container)
   container.appendChild(picture)
   container.appendChild(fortune)
-  container.append(footer)
+  container.appendChild(refresh)
+  refresh.appendChild(refreshText)
+  container.appendChild(footer)
+  footer.appendChild(footerText)
 }
-
+buildPage()
 sendRequest();
