@@ -1,6 +1,5 @@
 //get the facts
 var data, fact;
-var facts = [];
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -9,24 +8,9 @@ function getRandomInt(min, max) {
 }
 
 function getRandomFact(){
-    var fact = facts[getRandomInt(0,data.length)]
+    var fact = catfacts[getRandomInt(0,catfacts.length)]
     document.querySelector("p").textContent =  `"${fact}"`;
   }
-
-function sendRequest(){
-  var request = new XMLHttpRequest();
-  request.open('GET', 'https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts',true);
-  request.setRequestHeader("Access-Control-Allow-Origin", "*");
-  request.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With");
-  request.onload = function(){
-    data = JSON.parse(this.response).all
-    for (var i = 0; i < data.length; i++) {
-      facts.push(data[i].text)
-    }
-    getRandomFact();
-  };
-  request.send()
-}
 
 
 //build the page
@@ -37,15 +21,11 @@ function buildPage(){
 
   const refresh = document.createElement('div')
   refresh.setAttribute('class', 'refresh text-center col align-self-center')
-  refresh.setAttribute('onclick', 'sendRequest()')
-  refresh.setAttribute('keydown', 'sendRequest()')
+  refresh.setAttribute('onclick', 'getRandomFact()')
+  refresh.setAttribute('keydown', 'getRandomFact()')
 
   const refreshText = document.createElement("p")
   refreshText.innerText = "Click here for a new fortune"
-
-  //
-  //
-  // refresh.innerText = "Click here for a new fortune"
 
   const header = document.createElement('p')
   header.textContent = "cat facts NYT fortune teller"
@@ -65,6 +45,8 @@ function buildPage(){
   footerText.setAttribute("class", "text-center")
   footerText.innerHTML = 'shoutout: <a href="https://alexwohlbruck.github.io/cat-facts/docs/">cat-facts api</a> & NYT cartoonist <a href="https://www.mickstevens.com/">Mick Stevens</a>'
 
+ /// TO DO: COLLAPSE REFRESH BUTTON INTO FOOTER AND GIVE IT A WHITE BACKGROUND IN CASE FORTUNE TEXTS OVERRUNS
+
   app.appendChild(container)
   container.appendChild(picture)
   container.appendChild(fortune)
@@ -72,6 +54,8 @@ function buildPage(){
   refresh.appendChild(refreshText)
   container.appendChild(footer)
   footer.appendChild(footerText)
+
+  getRandomFact()
 }
+
 buildPage()
-sendRequest();
