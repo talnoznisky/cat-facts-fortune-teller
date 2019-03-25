@@ -132,7 +132,6 @@ const catfacts = [
   "During the Middle Ages, cats were associated with withcraft, and on St. John’s Day, people all over Europe would stuff them into sacks and toss the cats into bonfires. On holy days, people celebrated by tossing cats from church towers.",
   "During the time of the Spanish Inquisition, Pope Innocent VIII condemned cats as evil and thousands of cats were burned. Unfortunately, the widespread killing of cats led to an explosion of the rat population, which exacerbated the effects of the Black Death.",
   "Edward Lear, author of \"The Owl and the Pussycat\", is said to have had his new house in San Remo built to exactly the same specification as his previous residence, so that his much-loved tabby, Foss, would immediately feel at home.",
-  "Every time you masturbate God kills a kitten. Please, think of the kittens.",
   "Every year, nearly four million cats are eaten in Asia.",
   "Female cats tend to be right pawed, while male cats are more often left pawed. Interestingly, while 90% of humans are righthanded, the remaining 10% of lefties also tend to be male.",
   "Florence Nightingale owned more than 60 cats in her lifetime.",
