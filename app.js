@@ -12,7 +12,6 @@ function getRandomFact(){
     document.querySelector("p").textContent =  `"${fact}"`;
   }
 
-
 //build the page
 function buildPage(){
   const app = document.getElementById('root');
@@ -21,11 +20,10 @@ function buildPage(){
 
   const refresh = document.createElement('div')
   refresh.setAttribute('class', 'refresh text-center col align-self-center')
-  refresh.setAttribute('onclick', 'getRandomFact()')
-  refresh.setAttribute('keydown', 'getRandomFact()')
-
-  const refreshText = document.createElement("p")
-  refreshText.innerText = "Click here for a new fortune"
+  refresh.innerText = "Click here for a new fortune"
+  refresh.addEventListener('click',function(e){getRandomFact();})
+  refresh.addEventListener('touchstart', function(e){e.target.classList.add = 'active'})
+  refresh.addEventListener('touchend', function(e){e.target.classList.remove = 'active'})
 
   const header = document.createElement('p')
   header.textContent = "cat facts NYT fortune teller"
@@ -51,7 +49,6 @@ function buildPage(){
   container.appendChild(picture)
   container.appendChild(fortune)
   container.appendChild(refresh)
-  refresh.appendChild(refreshText)
   container.appendChild(footer)
   footer.appendChild(footerText)
 

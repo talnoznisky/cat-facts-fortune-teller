@@ -1,0 +1,21 @@
+{
+  "short_name": "CFFT",
+  "name": "Cat Facts Fortune Teller",
+  "icons": [
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/cat-facts-fortune-teller",
+  "background_color": "white",
+  "display": "standalone",
+  "scope": "/cat-facts-fortune-teller/",
+  "theme_color": "white"
+}

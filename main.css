@@ -1,14 +1,15 @@
 .container{
     height:100vh;
-    .inline
-    /* border: 2px solid lightgray;
-    border-radius: 5px;
-    margin-top: 1em; */
+}
+a, a:hover{
+  color: #de6238;
+  text-decoration: underline;
 }
 
 img{
 padding-top: 1em;
 transform: rotateY(180deg);
+max-height: 350px;
 }
 
 p, .page-footer{
@@ -28,6 +29,8 @@ p, .page-footer{
   right: 0;
   bottom: 0;
   padding-bottom: 0;
+  background-color: white;
+  margin-top: 1em;
 }
 
 .refresh{
@@ -44,7 +47,17 @@ p, .page-footer{
   transform: translateX(-50%);
   max-width: 520px;
   width:85vw;
+  font-size: 1em;
+  padding: 0.5em;
+  box-shadow: inset 0px 0px 2px #c1c1c1;
 }
+
+.refresh:active, .refresh .active{
+  background-color: #f4cabc;
+  color: #000033;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
 .refresh > p{
   padding: 8px 0px 8px 0px;
 
